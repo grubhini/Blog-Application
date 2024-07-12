@@ -1,0 +1,30 @@
+<%- include("../public/partials/header.ejs") %>
+<div class="container1">
+    <div class="row">
+      <div class="col-md-8">
+        <% if (locals.isEdit) { %>
+          <p class="form-text">Edit your Blog</p>
+          <% }else{ %>
+          <p class="form-text">Fill the form for creating your blog</p>
+          <% } %>
+        <form action="<%= locals.isEdit ? `/edit/${locals.blogDetails?.id}` : '/home' %>" method="post" role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="Title"/>
+          </div>
+          
+        </div>
+          <div class="form-group col-md-8">
+            <textarea class="form-control bcontent" name="content" placeholder="Write here"></textarea>
+          </div>
+          
+          <div class="form-group col-md-8">
+             <input type="submit" name="Submit" value="Publish" class="btn btn-primary form-control submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include("../public/partials/footer.ejs") %>

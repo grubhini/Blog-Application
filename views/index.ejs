@@ -1,0 +1,27 @@
+<%- include("../public/partials/header.ejs") %>
+
+<% if ( blogList.length > 0 ) { %>
+    <h1>Blogs to read</h1>
+    <div class="container2">
+        <% for(let i=0; i<blogList.length ; i++ ) { %> 
+            <div class="card-body px-3 d-flex flex-column align-items-start mb-3">
+                <h3 class="mb-0">
+                  <h4> <%= blogList[i].title %> </h4>
+                </h3>
+                <p class="card-text mb-auto"><%= blogList[i].content?.slice(0,100) %></p>
+                <a href="/viewblog/<%= blogList[i].id %>">Continue reading</a>
+            </div>
+        
+
+    <% } %>
+
+    </div>
+<% } else { %>
+    <h1>You have no blogs yet. Let that creative mind of yours work!</h1>
+    <h1>Start Creating Now.</h1>
+<% } %>
+
+
+
+
+<%- include("../public/partials/footer.ejs") %>

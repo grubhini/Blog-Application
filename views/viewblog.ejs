@@ -1,0 +1,16 @@
+<%- include("../public/partials/header.ejs") %>
+<div class="container3">
+    <div class="viewBlog-header">
+      <h1 class="title text-left" ><%= blogDetails?.title %></h1>
+      <div>
+        <a href="/edit/<%=blogDetails.id  %>" class="edit-btn">Edit</a>
+        <a href="/delete/<%=blogDetails.id  %>" class="delete-btn">Delete</a></button>
+      </div>
+      
+
+    </div>
+    <div class="overflow-div">
+      <p><%= blogDetails?.content %></p>
+    </div>
+  </div>
+<%- include("../public/partials/footer.ejs") %>
